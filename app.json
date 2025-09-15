@@ -3,28 +3,22 @@
     "name": "Scallapp",
     "slug": "Scallapp",
     "version": "1.0.0",
-    "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "scallapp",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": false,
-    "ios": {
-      "supportsTablet": true
+    "androidStatusBar": {
+      "backgroundColor": "#13153b",
+      "barStyle": "light-content",
+      "translucent": true
     },
     "android": {
+      "package": "com.fmazeas.Scallapp",
+      "versionCode": 2,                       
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
+        "backgroundColor": "#13153b",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false,
-      "package": "com.fmazeas.Scallapp"
-    },
-    "web": {
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "predictiveBackGestureEnabled": false
     },
     "plugins": [
       [
@@ -33,18 +27,13 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff",
-          "dark": {
-            "backgroundColor": "#000000"
-          }
+          "backgroundColor": "#000000",
+          "dark": { "backgroundColor": "#000000" }
         }
       ]
     ],
     "extra": {
-      "router": {},
-      "eas": {
-        "projectId": "fdffa9d0-4f71-478f-aa26-e225619f1074"
-      }
+      "eas": { "projectId": "fdffa9d0-4f71-478f-aa26-e225619f1074" }
     },
     "owner": "fmazeas"
   }
