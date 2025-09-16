@@ -11,7 +11,7 @@
     },
     "android": {
       "package": "com.fmazeas.Scallapp",
-      "versionCode": 2,                       
+      "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundColor": "#13153b",
@@ -28,12 +28,17 @@
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#13153b",
-          "dark": { "backgroundColor": "#000000" }
+          "dark": {
+            "backgroundColor": "#000000"
+          }
         }
-      ]
+      ],
+      "expo-secure-store"
     ],
     "extra": {
-      "eas": { "projectId": "fdffa9d0-4f71-478f-aa26-e225619f1074" }
+      "eas": {
+        "projectId": "fdffa9d0-4f71-478f-aa26-e225619f1074"
+      }
     },
     "owner": "fmazeas"
   }

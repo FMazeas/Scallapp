@@ -33,7 +33,7 @@ export default function RegisterScreen({ navigation }: Props) {
   };
 
   const birthDateLabel =
-    birthDate ? birthDate.toLocaleDateString() : 'Date de naissance (taper pour choisir)';
+    birthDate ? birthDate.toLocaleDateString() : 'Date de naissance';
 
   return (
     <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
