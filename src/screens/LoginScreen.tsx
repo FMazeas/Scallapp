@@ -50,27 +50,31 @@ export default function LoginScreen({ navigation }: Props) {
   const finishLogin = async (who: string) => {
     // Mémorise le login pour les prochaines connexions biométriques
     await SecureStore.setItemAsync('lastLogin', who);
-    navigation.replace('Dashboard', { login: who });
+    navigation.replace('MainTabs', { login });
   };
+
+  // const onLogin = async () => {
+  //   if (!canSubmit) return;
+
+  //   const credentials = [
+  //     { login: 'dev', password: 'dev' },
+  //     { login: 'test', password: 'test' },
+  //   ];
+
+  //   const match = credentials.find(
+  //     (c) => c.login === login.trim() && c.password === password
+  //   );
+
+  //   if (match) {
+  //     await finishLogin(match.login);
+  //   } else {
+  //     Alert.alert('Échec', 'Identifiants invalides.');
+  //   }
+  // };
 
   const onLogin = async () => {
-    if (!canSubmit) return;
-
-    const credentials = [
-      { login: 'dev', password: 'dev' },
-      { login: 'test', password: 'test' },
-    ];
-
-    const match = credentials.find(
-      (c) => c.login === login.trim() && c.password === password
-    );
-
-    if (match) {
-      await finishLogin(match.login);
-    } else {
-      Alert.alert('Échec', 'Identifiants invalides.');
-    }
-  };
+  await finishLogin(login.trim() || "guest");
+};
 
   const onBiometricLogin = async () => {
   if (!bioAvailable) return;
@@ -103,7 +107,7 @@ export default function LoginScreen({ navigation }: Props) {
         <TextInput
           style={styles.input}
           placeholder="Identifiant"
-          placeholderTextColor="#9AA7B2"
+          placeholderTextColor="#7F8387"
           autoCapitalize="none"
           value={login}
           onChangeText={setLogin}
@@ -111,7 +115,7 @@ export default function LoginScreen({ navigation }: Props) {
         <TextInput
           style={styles.input}
           placeholder="Mot de passe"
-          placeholderTextColor="#9AA7B2"
+          placeholderTextColor="#7F8387"
           secureTextEntry
           value={password}
           onChangeText={setPassword}
@@ -149,11 +153,11 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   logo: { width: 200, height: 200, marginBottom: 28 },
-  title: { color: '#E9EEF5', fontSize: 24, fontWeight: '700', marginBottom: 12 },
+  title: { color: '#F2D994', fontSize: 24, fontWeight: '700', marginBottom: 12 },
   input: {
     width: '100%',
-    backgroundColor: '#1a1d47',
-    color: '#E9EEF5',
+    backgroundColor: '#F5F5F5',
+    color: '#535557',
     paddingHorizontal: 14,
     paddingVertical: 12,
     borderRadius: 12,
@@ -162,7 +166,7 @@ const styles = StyleSheet.create({
   },
   primaryBtn: {
     width: '100%',
-    backgroundColor: '#2f7bdc',
+    backgroundColor: '#1F7ADB',
     paddingVertical: 12,
     borderRadius: 12,
     alignItems: 'center',

@@ -1,9 +1,9 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import React, { useState } from 'react';
 import { LayoutChangeEvent, StyleSheet, View } from 'react-native';
-import Svg, { Line } from 'react-native-svg';
 
-const BG = '#13153b';
+//const BG = '#13153b';
+const BG = '#051124' ;
 
 export default function AppBackground({ children }: { children: React.ReactNode }) {
   const [size, setSize] = useState({ w: 0, h: 0 });
@@ -21,14 +21,14 @@ export default function AppBackground({ children }: { children: React.ReactNode 
 
         {/* Léger gradient */}
         <LinearGradient
-          colors={['#0f1238', '#13153b']}
+          colors={['#051124', '#d4b258']}
           start={{ x: 0.5, y: 0 }}
-          end={{ x: 0.5, y: 1 }}
+          end={{ x: 0.5, y: 6}}
           style={StyleSheet.absoluteFill}
         />
 
         {/* Stries diagonales */}
-        {size.w > 0 && size.h > 0 && (
+        {/* {size.w > 0 && size.h > 0 && (
           <Svg width="100%" height="100%">
             {Array.from({ length: Math.ceil((size.w + size.h) / 32) }, (_, i) => {
               const x = -size.h + i * 32;
@@ -45,7 +45,7 @@ export default function AppBackground({ children }: { children: React.ReactNode 
               );
             })}
           </Svg>
-        )}
+        )} */}
       </View>
 
       <View style={styles.content}>{children}</View>
